@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Asynchronous Image Loading</title>
+</head>
+<body>
+  <div id="holder-div"></div>
+  <script type="text/javascript">
+    var image = new Image(100),
+        url = "http://www.infoq.com/resource/presentations/javascript-concurrency-parallelism/en/promoimage/strangeloop2013.png", //myimg.jpg
+        container = document.getElementById("holder-div");
+
+    image.src = url;
+    
+    setTimeout(function(){
+      image.onload = function() {
+        container.appendChild(image)
+      };
+    }, 1000);
+  </script>
+  <a href="http://www.infoq.com/presentations/javascript-concurrency-parallelism">Concurrency and Parallel Computing in JavaScript (Recorded at: StrangeLoop) by Stephan Herhut on Mar 05, 2014 </a>
+</body>
+</html>
