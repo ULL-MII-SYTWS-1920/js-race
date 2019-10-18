@@ -1,3 +1,10 @@
+## index.html
+
+See 
+
+* https://www.infoq.com/presentations/javascript-concurrency-parallelism/
+* https://crguezl.github.io/_book/uai2015/
+
 ## File race-example.js
 
 https://medium.com/@ubershmekel/yes-there-are-race-conditions-in-javascript-ba044571a914
