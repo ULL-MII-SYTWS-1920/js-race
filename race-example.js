@@ -14,7 +14,7 @@
 let number = 0;
 const times = 100;
 
-function sleep() {
+function sleep() { 
   return new Promise(
     (resolve) => setTimeout(resolve, Math.random() * 5));
 }
@@ -23,12 +23,13 @@ async function adder() {
   for (let i = 0; i < times; i++) {
     await sleep();
 
-      let read = number;
+      let read = number; 
       read = read + 1;
 
-    await sleep();
+    await sleep(); // This task is interrupted here giving opportunity for 'subber' to take the processor
 
-    number = read;
+    number = read; // But there is a chance 'read' is obsolete. 
+                   // It is a sort of "manual" co-routine race cndition: not atomic anymore
   }
 }
 
